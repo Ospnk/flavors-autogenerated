@@ -23,7 +23,8 @@ $ flutter run --flavor production --target lib/main_production.dart
 
 
 
-# to add firebase project for each flavor you shoud firstly create firebase project and then run command (notice that you should run this command for an each flavor)
+# to add firebase project for each flavor you shoud firstly create firebase project and then run command 
+(notice that you should run this command for an each flavor)
 $ flutterfire config \
   --project=firebase-project \
   --out=lib/firebase_options_stg.dart \
