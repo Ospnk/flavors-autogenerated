@@ -20,6 +20,16 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 
 # Production
 $ flutter run --flavor production --target lib/main_production.dart
+
+
+
+# to add firebase project for each flavor you shoud firstly create firebase project and then run command (notice that you should run this command for an each flavor)
+$ flutterfire config \
+  --project=firebase-project \
+  --out=lib/firebase_options_stg.dart \
+  --ios-bundle-id=bundle-id.stg \
+  --macos-bundle-id=bundle-id.stg \
+  --android-app-id=bundle-id.stg
 ```
 
 _\*Demo App Flavors works on iOS, Android, Web, and Windows._
@@ -90,22 +100,6 @@ Widget build(BuildContext context) {
   final l10n = context.l10n;
   return Text(l10n.helloWorld);
 }
-```
-
-### Adding Supported Locales
-
-Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info.plist` to include the new locale.
-
-```xml
-    ...
-
-    <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-	</array>
-
-    ...
 ```
 
 ### Adding Translations
